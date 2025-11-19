@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Drifter - Red-billed Gull</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes flap {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(45deg); }
+      }
+      @keyframes flap-far {
+        0%, 100% { transform: rotate(10deg); }
+        50% { transform: rotate(-30deg); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+      }
+      @keyframes cloud-drift {
+        from { transform: translateX(100vw); }
+        to { transform: translateX(-200px); }
+      }
+      .animate-flap-near {
+        transform-origin: 110px 110px;
+        animation: flap 0.8s ease-in-out infinite;
+      }
+      .animate-flap-far {
+        transform-origin: 130px 100px;
+        animation: flap-far 0.8s ease-in-out infinite;
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      .cloud-slow {
+        animation: cloud-drift 60s linear infinite;
+      }
+      .cloud-medium {
+        animation: cloud-drift 40s linear infinite;
+      }
+      .cloud-fast {
+        animation: cloud-drift 25s linear infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
